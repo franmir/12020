@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+#import the necessary packages
+
+import time
+import numpy as np
+
+from SimpleCV import Image,Camera,Display,Image,Color
+from SimpleCV import *
+import sys
+
+
+
+#imagen en escala de grises
+imgGray1=Image ("grayFoto2.png")
+
+
+
+mask = imgGray1.createAlphaMask(hue_lb=50,hue_ub=70)
+mask.save("maskFoto2.png")
+mask.show()
+
+
+
+mask = Image("mask.png")
+aMask = Image("alphaMask.png")
+img2.blit(top,pos=(100,100)).show()
+img2I.blit(top,alpha=0.5).show()
+img2.blit(top,pos=(100,100),mask=mask).show()
+img2.blit(top,pos=(-10,-10),alphaMask=aMask).show()
