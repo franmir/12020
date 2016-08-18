@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+from sklearn.cluster import KMeans
+import time
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+from SimpleCV import Image,Camera,Display,Image,Color
+from SimpleCV import *
+import cv2
+
+
+img1=Image("pruebagris.png")
+img2=Image("pruebamov.png")
+w2,h2 = img2.size()
+
+m=img1.findKeypointMatch(img2)
+H=m[0].getHomography()
+aligned_img2=img2.transformPerspective(H)
+akigned_img2.save("ahh.jpg")
+overlay_img = aligned_img2.blit(img1,alpha=0.5)  #overlay   
+overlay_img.save("overlay_succeed.jpg")
