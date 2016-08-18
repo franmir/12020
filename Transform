@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+#import the necessary packages
+from SimpleCV import Image
+img1=Image("pruebamov2.jpg")
+corners=[(0,0),(640,0),(500,400),(50,400)]
+straight=img1.shear(corners)
+straight.save("foto8.jpg")
+straight.show()
+img2=Image("pruebamov.jpg")
+corners=[(0,0),(400,0),(480,640),(50,640)]
+straight=img2.shear(corners)
+straight.save("foto9.jpg")
+straight.show()
