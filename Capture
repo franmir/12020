@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+#import the necessary packages
+
+import time
+import numpy as np
+
+
+from SimpleCV import Image,Camera,Display,Image,Color
+from SimpleCV import *
+import cv2
+
+import numpy as np
+from PIL import Image
+
+cam0=Camera(0)
+cam1=Camera(1)
+
+time.sleep(3)
+img1 =cam1.getImage()
+img1.save("fotff.png")
+foto=img1.show()
+time.sleep(3)
+
+img2 =cam0.getImage()
+img2.save("fotoss.png")
+foto=img2.show()
+time.sleep(3)
